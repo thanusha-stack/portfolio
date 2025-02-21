@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="./src/assets/images/logoHireElite.png" />
+    <title>Portfolio</title>
+    <style>
+        nav{
+            display: flex;
+        }
+        li:hover {
+            color: #007bff; 
+            cursor: pointer;
+        }
+        button{
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #000000; 
+            color: #007bff;
+        }
+        .project-display {
+  text-align: center;
+  margin: 20px;
+}
+
+.main-image img {
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+}
+
+.sub-images {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sub-image {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.sub-image:hover {
+  transform: scale(1.1);
+  border-color: #0073e6;
+}
+
+    </style>
+</head>
+<body style="background-image: linear-gradient(135deg, #434343 10%, #000000 100%);color: white;font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+    <nav > 
+        <ul style="display:flex; gap: 50px; align-items: center;">
+        <div style="padding: 10px; width: 400px; ">PORTFOLIO</div>
+        <li style="list-style: none;padding: 10px; cursor: pointer;"  >HOME</li>
+        <li style="list-style: none;padding: 10px; cursor: pointer;"  >EXPERTISE</li>
+        <li style="list-style: none;padding: 10px; cursor: pointer;"  >SKILLS</li>
+        <li style="list-style: none;padding: 10px; cursor: pointer;"  >PROJECTS</li>
+        <li style="list-style: none;padding: 10px; cursor: pointer;"  >CONTACT</li>
+        </ul> 
+    </nav>
+    <div class="Home" style="display: flex; flex-direction: column; align-items: center; text-align: left; padding: 20px;">
+        <div style="display: flex; align-items: center; gap: 50px; margin-top: 50px;">
+            <div>
+                <p style="font-weight: bolder; font-size: 30px; color: #fffdfd; margin-bottom: 10px;">Hi! I am Thanusha.</p>
+                <p style="font-weight: bolder; font-size: 30px; color: #00a5e6; margin-bottom: 10px;">Full-stack Developer</p>
+                <p style="font-size: 18px; color: #c3c1c1; line-height: 1.6; max-width: 600px;">I'm a full-stack developer with a passion for building dynamic and user-friendly web applications. 
+                    I enjoy learning new technologies and solving complex problems to create impactful solutions.</p>
+                <button style="color: rgb(0, 0, 0); border: none; font-weight: bolder; font-size: medium; border-color: #000000; border-radius: 4px; background-color: #00a5e6; padding: 10px 20px; margin-top: 20px;">View Resume</button>
+            </div>
+            <img style="height: 360px; width: 305px; border-radius: 50%; box-shadow: 0 0 20px #00a5e6;background-color: #00a5e6;" src="./Untitled_design-removebg-preview.png" alt="Thanusha's photo" />
+        </div>
+    </div>
+    <div class="Expertise" style="display:flex ; margin-top: 50px; align-items: center; flex-direction: column;text-align: left;">
+        <div style="font-size: 40px; font-weight:bolder;color:#00a5e6 ;display:flex ; flex-direction: column; align-items: center; text-align: left; padding: 20px; border-radius: 15px; ">MY EXPERTISE</div>
+        <div style="display: flex;gap: 50px;">
+            <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%);" >
+                <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Frontend Develoment</span> 
+                <span style="padding-top: 10px;">Proficient in HTML, CSS, JavaScript, React, Tailwind CSS, crafting interactive and responsive user interfaces.</span>
+                <img src="./Application-development.png" style="height: 250px;width: 250px;"/>
+            </div>
+            <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%);" >
+                <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Backend Development</span> 
+                <span style="padding-top: 10px;"> Skilled in Node.js, Express.js for building scalable server-side applications.</span>
+                <img src="./Programming-Skills.png" style="height: 250px;width: 250px;"/>
+            </div>
+        <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%);" >
+            <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Database Management</span> 
+            <span style="padding-top: 10px;">Hands-on experience with SQL, MongoDB, and other database systems for secure and efficient data handling.</span>
+            <img src="Programing.png" style="height: 250px;width: 250px;"/>
+        </div>
+    </div>
+    </div>
+    <div class="skills" style="display:flex;margin-top: 50px;align-items: center;flex-direction: column;">
+    <div style="font-size: 40px; font-weight:bolder;color:#00a5e6 ; padding: 20px; border-radius: 15px; ">SKILLS</div>
+    <div style="display:flex;gap: 50px;">
+    <img src="./image.png"/>
+    <img src="./image copy.png"/>
+    <img src="./image copy 2.png"/>
+    <img src="./image copy 3.png"/>
+    <img src="./image copy 6.png"/>
+    <img src="./image copy 4.png"/>
+    <img src="./image copy 5.png"/>
+    </div><div style="display: flex;gap:50px;">
+    <img src="./image copy 7.png"/>
+    <img src="./image copy 8.png"/>
+    <img src="./image copy 9.png"/>
+    </div>
+    </div>
+    <div class="projects" style="display:flex;margin-top: 50px;align-items: center;flex-direction: column;">
+    <div style="font-size: 40px; font-weight:bolder;color:#00a5e6 ;display:flex ; flex-direction: column; align-items: center; text-align: left; padding: 20px; border-radius: 15px;">PROJECTS</div>
+    <div class="project-display">
+        <div class="main-image">
+        <div>WEB APPLICATION</div>
+          <img id="mainImage" src="./Screenshot 2025-01-04 143141.png" alt="Main Project Image">
+        </div>
+        <div class="sub-images">
+            <img class="sub-image" src="./Screenshot 2025-01-04 143141.png" alt="Project Sub Image 1" onclick="updateMainImage('./Screenshot 2025-01-04 143141.png')">  
+          <img class="sub-image" src="./Screenshot 2025-01-04 143157.png" alt="Project Sub Image 1" onclick="updateMainImage('./Screenshot 2025-01-04 143157.png')">
+          <img class="sub-image" src="./Screenshot 2025-01-04 143211.png" alt="Project Sub Image 2" onclick="updateMainImage('./Screenshot 2025-01-04 143211.png')">
+          <img class="sub-image" src="./Screenshot 2025-01-04 143253.png" alt="Project Sub Image 3" onclick="updateMainImage('./Screenshot 2025-01-04 143253.png')">
+          <img class="sub-image" src="./Screenshot 2025-01-04 143429.png" alt="Project Sub Image 4" onclick="updateMainImage('./Screenshot 2025-01-04 143429.png')">
+        </div>
+    </div>
+    <div class="contact" style="background-image: linear-gradient(135deg, #071952 10%, #088395 100%);">
+     <div style="font-size: 40px; font-weight: bolder; color: #d3dee2;">CONTACT</div>
+     <div>
+    </div>
+</body>
+</html>
+<script>
+    function updateMainImage(imageSrc) {
+  const mainImage = document.getElementById("mainImage");
+  mainImage.src = imageSrc;
+}
+
+</script>
