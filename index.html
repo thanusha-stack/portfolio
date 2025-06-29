@@ -6,6 +6,47 @@
     <link rel="icon" type="image/svg+xml" href="./src/assets/images/logoHireElite.png" />
     <title>Portfolio</title>
     <style>
+    
+  .scroll-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .scroll-area {
+    display: flex;
+    gap: 50px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Hide default scrollbar in Firefox */
+  }
+
+  .scroll-area::-webkit-scrollbar {
+    display: none; /* Hide default scrollbar in Chrome/Safari */
+  }
+
+  .custom-scrollbar {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px; /* 👈 Control scrollbar length here */
+    height: 6px;
+    background-color: #434343;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .custom-thumb {
+    width: 50%; /* will be updated dynamically with JS */
+    height: 100%;
+    background-color: #00a5e6;
+    border-radius: 10px;
+  }
+
+
         nav{
             display: flex;
         }
@@ -32,7 +73,18 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: 15px;
 }
+html {
+  scroll-behavior: smooth;
+}
 
+
+.main-image2 img {
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+}
 .sub-images {
   display: flex;
   justify-content: center;
@@ -52,6 +104,23 @@
   transform: scale(1.1);
   border-color: #0073e6;
 }
+.custom-scrollbar::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #00a5e6;
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: #434343;
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #00a5e6 #434343;
+  }
 
     </style>
 </head>
@@ -59,46 +128,68 @@
     <nav > 
         <ul style="display:flex; gap: 50px; align-items: center;">
         <div style="padding: 10px; width: 400px; ">PORTFOLIO</div>
-        <li style="list-style: none;padding: 10px; cursor: pointer;"  >HOME</li>
-        <li style="list-style: none;padding: 10px; cursor: pointer;"  >EXPERTISE</li>
-        <li style="list-style: none;padding: 10px; cursor: pointer;"  >SKILLS</li>
-        <li style="list-style: none;padding: 10px; cursor: pointer;"  >PROJECTS</li>
-        <li style="list-style: none;padding: 10px; cursor: pointer;"  >CONTACT</li>
+        <li style="list-style: none;padding: 10px; cursor: pointer;"  ><a href="#home"  style="color: white; text-decoration: none;">HOME</a></li>
+        <li style="list-style: none;padding: 10px; cursor: pointer;"  ><a href="#expertise"  style="color: white; text-decoration: none;">EXPERTISE</a></li>
+        <li style="list-style: none;padding: 10px; cursor: pointer;"  ><a href="#skills"  style="color: white; text-decoration: none;"> SKILLS</a> </li>
+        <li style="list-style: none;padding: 10px; cursor: pointer;"  ><a href="#projects"  style="color: white; text-decoration: none;"> PROJECTS</a></li>
+        <li style="list-style: none;padding: 10px; cursor: pointer;"  ><a href="#contacts"  style="color: white; text-decoration: none;"> CONTACT</a></li>
         </ul> 
     </nav>
-    <div class="Home" style="display: flex; flex-direction: column; align-items: center; text-align: left; padding: 20px;">
+    <div class="Home" id="home" style="display: flex; flex-direction: column; align-items: center; text-align: left; padding: 20px;">
         <div style="display: flex; align-items: center; gap: 50px; margin-top: 50px;">
             <div>
                 <p style="font-weight: bolder; font-size: 30px; color: #fffdfd; margin-bottom: 10px;">Hi! I am Thanusha.</p>
-                <p style="font-weight: bolder; font-size: 30px; color: #00a5e6; margin-bottom: 10px;">Full-stack Developer</p>
+                <p style="font-weight: bolder; font-size: 30px; color: #00a5e6; margin-bottom: 10px;">Junior Full-stack Developer | Machine Learning Enthusiast</p>
                 <p style="font-size: 18px; color: #c3c1c1; line-height: 1.6; max-width: 600px;">I'm a full-stack developer with a passion for building dynamic and user-friendly web applications. 
                     I enjoy learning new technologies and solving complex problems to create impactful solutions.</p>
+                <a href="./Thanusha_Resume (1).pdf" download style="text-decoration: none;">
                 <button style="color: rgb(0, 0, 0); border: none; font-weight: bolder; font-size: medium; border-color: #000000; border-radius: 4px; background-color: #00a5e6; padding: 10px 20px; margin-top: 20px;">View Resume</button>
-            </div>
+                </a>
+              </div>
             <img style="height: 360px; width: 305px; border-radius: 50%; box-shadow: 0 0 20px #00a5e6;background-color: #00a5e6;" src="./Untitled_design-removebg-preview.png" alt="Thanusha's photo" />
         </div>
     </div>
-    <div class="Expertise" style="display:flex ; margin-top: 50px; align-items: center; flex-direction: column;text-align: left;">
+    <div class="Expertise" id="expertise" style="display:flex ; margin-top: 50px; align-items: center; flex-direction: column;text-align: left;">
         <div style="font-size: 40px; font-weight:bolder;color:#00a5e6 ;display:flex ; flex-direction: column; align-items: center; text-align: left; padding: 20px; border-radius: 15px; ">MY EXPERTISE</div>
-        <div style="display: flex;gap: 50px;">
-            <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%);" >
-                <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Frontend Develoment</span> 
-                <span style="padding-top: 10px;">Proficient in HTML, CSS, JavaScript, React, Tailwind CSS, crafting interactive and responsive user interfaces.</span>
-                <img src="./Application-development.png" style="height: 250px;width: 250px;"/>
+
+
+
+        <div class="scroll-wrapper">
+            <div id="scrollArea" class="scroll-area" style="overflow-x: auto; margin: 20px; margin-left: 50px; display: flex; gap: 50px;">
+                <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%); flex-shrink: 0;" >
+                    <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Frontend Develoment</span> 
+                    <span style="padding-top: 10px;">Proficient in HTML, CSS, JavaScript, React, Tailwind CSS, crafting interactive and responsive user interfaces.</span>
+                    <img src="./Application-development.png" style="height: 250px;width: 250px;"/>
+                </div>
+                
+                <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%); flex-shrink: 0;" >
+                    <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Backend Development</span> 
+                    <span style="padding-top: 10px;"> Skilled in Node.js, Express.js, Flask for building scalable server-side applications.</span>
+                    <img src="./Programming-Skills.png" style="height: 250px;width: 250px;"/>
+                </div>
+                
+                <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%); flex-shrink: 0;" >
+                    <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Database Management</span> 
+                    <span style="padding-top: 10px;">Hands-on experience with SQL, MongoDB for secure and efficient data handling.</span>
+                    <img src="Programing.png" style="height: 250px;width: 250px;"/>
+                </div>
+                
+                <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%); flex-shrink: 0;" >
+                    <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Machine Learning</span> 
+                    <span style="padding-top: 10px;">Skilled in Python, TensorFlow, Scikit-learn for building ML models. Experienced in Data Preprocessing, Feature Engineering, and Model Optimization.</span>
+                    <img src="Programing.png" style="height: 250px;width: 250px;"/>
+                </div>
             </div>
-            <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%);" >
-                <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Backend Development</span> 
-                <span style="padding-top: 10px;"> Skilled in Node.js, Express.js for building scalable server-side applications.</span>
-                <img src="./Programming-Skills.png" style="height: 250px;width: 250px;"/>
+            <div class="custom-scrollbar">
+              <div id="customThumb" class="custom-thumb"></div>
             </div>
-        <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%);" >
-            <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Database Management</span> 
-            <span style="padding-top: 10px;">Hands-on experience with SQL, MongoDB, and other database systems for secure and efficient data handling.</span>
-            <img src="Programing.png" style="height: 250px;width: 250px;"/>
-        </div>
+          </div>
+          
+       
     </div>
     </div>
-    <div class="skills" style="display:flex;margin-top: 50px;align-items: center;flex-direction: column;">
+    </div>
+    <div class="skills" id="skills" style="display:flex;margin-top: 50px;align-items: center;flex-direction: column;">
     <div style="font-size: 40px; font-weight:bolder;color:#00a5e6 ; padding: 20px; border-radius: 15px; ">SKILLS</div>
     <div style="display:flex;gap: 50px;">
     <img src="./image.png"/>
@@ -114,25 +205,99 @@
     <img src="./image copy 9.png"/>
     </div>
     </div>
-    <div class="projects" style="display:flex;margin-top: 50px;align-items: center;flex-direction: column;">
-    <div style="font-size: 40px; font-weight:bolder;color:#00a5e6 ;display:flex ; flex-direction: column; align-items: center; text-align: left; padding: 20px; border-radius: 15px;">PROJECTS</div>
-    <div class="project-display">
+<div class="projects" id="projects" style="display: flex; margin-top: 50px; align-items: center; flex-direction: column;">
+  <div style="font-size: 40px; font-weight: bolder; color: #00a5e6; display: flex; flex-direction: column; align-items: center; text-align: left; padding-bottom: 0px; margin-bottom: 0px; border-radius: 15px;">PROJECTS</div>
+
+  <div class="scroll-wrapper">
+  <div id="projectScroll" class="scroll-area" style="margin: 0px; padding: 10px; display: flex; gap: 30px;">
+
+      <div class="project-display" style="flex: 0 0 100%; max-width: 800px;">
         <div class="main-image">
-        <div>WEB APPLICATION</div>
+          <div style="font-weight: bold; font-size: 24px;">Freelancer Recruitment Platform</div>
           <img id="mainImage" src="./Screenshot 2025-01-04 143141.png" alt="Main Project Image">
         </div>
         <div class="sub-images">
-            <img class="sub-image" src="./Screenshot 2025-01-04 143141.png" alt="Project Sub Image 1" onclick="updateMainImage('./Screenshot 2025-01-04 143141.png')">  
-          <img class="sub-image" src="./Screenshot 2025-01-04 143157.png" alt="Project Sub Image 1" onclick="updateMainImage('./Screenshot 2025-01-04 143157.png')">
-          <img class="sub-image" src="./Screenshot 2025-01-04 143211.png" alt="Project Sub Image 2" onclick="updateMainImage('./Screenshot 2025-01-04 143211.png')">
-          <img class="sub-image" src="./Screenshot 2025-01-04 143253.png" alt="Project Sub Image 3" onclick="updateMainImage('./Screenshot 2025-01-04 143253.png')">
-          <img class="sub-image" src="./Screenshot 2025-01-04 143429.png" alt="Project Sub Image 4" onclick="updateMainImage('./Screenshot 2025-01-04 143429.png')">
+          <img class="sub-image" src="./Screenshot 2025-01-04 143141.png" onclick="updateMainImage('./Screenshot 2025-01-04 143141.png')">
+          <img class="sub-image" src="./Screenshot 2025-01-04 143157.png" onclick="updateMainImage('./Screenshot 2025-01-04 143157.png')">
+          <img class="sub-image" src="./Screenshot 2025-01-04 143211.png" onclick="updateMainImage('./Screenshot 2025-01-04 143211.png')">
+          <img class="sub-image" src="./Screenshot 2025-01-04 143253.png" onclick="updateMainImage('./Screenshot 2025-01-04 143253.png')">
+          <img class="sub-image" src="./Screenshot 2025-01-04 143429.png" onclick="updateMainImage('./Screenshot 2025-01-04 143429.png')">
         </div>
+        <div style="margin-top: 20px; color: #c3c1c1;">
+          <p>This project is a comprehensive web application designed to connect freelancers with recruiters. 
+          It features user authentication, job listings, and a messaging system for seamless communication.</p>
+          <p>Technologies Used: React, Node.js, Express.js, MongoDB, Tailwind CSS</p>
+        </div>
+      </div>
+
+      <div class="project-display" style="flex: 0 0 80%; max-width: 800px;">
+        <div class="main-image2">
+          <div style="font-weight: bold; font-size: 24px;">Water Potability Prediction with Geospatial Insights</div>
+          <img id="mainImage2" src="./1.png" alt="Main Project Image">
+        </div>
+        <div class="sub-images">
+          <img class="sub-image" src="./1.png" onclick="updateMainImage2('./1.png')">
+          <img class="sub-image" src="./2.png" onclick="updateMainImage2('./2.png')">
+          <img class="sub-image" src="./3.png" onclick="updateMainImage2('./3.png')">
+          <img class="sub-image" src="./4.png" onclick="updateMainImage2('./4.png')">
+          <img class="sub-image" src="./31.png" onclick="updateMainImage2('./31.png')">
+          <img class="sub-image" src="./6.png" onclick="updateMainImage2('./6.png')">
+        </div>
+        <div style="margin-top: 20px; color: #c3c1c1;">
+          <p>This web-based application provides an intuitive platform for users to check water safety in various regions, helping promote awareness and better decision-making regarding water consumption.</p>
+          <p>Technologies Used: Python, Flask, Random Forest, Gradient Boosting, SMOTE, HTML, CSS, JavaScript, Leaflet.js, CPCB Dataset</p>
+        </div>
+      </div>
     </div>
-    <div class="contact" style="background-image: linear-gradient(135deg, #071952 10%, #088395 100%);">
-     <div style="font-size: 40px; font-weight: bolder; color: #d3dee2;">CONTACT</div>
-     <div>
+    <div class="custom-scrollbar">
+      <div id="customThumbProjects" class="custom-thumb"></div>
     </div>
+  </div>
+</div>
+
+<div class="contact" id="contacts" style="display: flex; flex-direction: column; align-items: center; margin-top: 50px; padding: 40px; background-color: #1a1a1a; border-top: 2px solid #00a5e6;">
+  <div style="font-size: 40px; font-weight: bolder; color: #00a5e6; margin-bottom: 30px;">CONTACT</div>
+
+ <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 600px; background-color: #2e2e2e; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 165, 230, 0.2);">
+  <input type="text" name="user_name" placeholder="Your Name" required style="padding: 15px; border-radius: 8px; border: 1px solid #444; background-color: #1f1f1f; color: white; font-size: 16px;">
+  
+  <input type="email" name="user_email" placeholder="Your Email" required style="padding: 15px; border-radius: 8px; border: 1px solid #444; background-color: #1f1f1f; color: white; font-size: 16px;">
+  
+  <textarea name="message" placeholder="Your Message" rows="5" required style="padding: 15px; border-radius: 8px; border: 1px solid #444; background-color: #1f1f1f; color: white; font-size: 16px; resize: vertical;"></textarea>
+  
+  <button type="submit" style="padding: 15px; font-weight: bold; font-size: 16px; border: none; border-radius: 8px; background-color: #00a5e6; color: black; cursor: pointer; transition: background-color 0.3s;">
+    Send Message
+  </button>
+</form>
+
+
+  <div style="margin-top: 30px; color: #c3c1c1; font-size: 16px; text-align: center;">
+    <p>Email: <a href="thanusha13062006@gmail.com" style="color: #00a5e6;">thanusha13062006@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/thanusha-arikrishnan-5a7169300/" target="_blank" style="color: #00a5e6;">https://www.linkedin.com/in/thanusha-arikrishnan-5a7169300/</a></p>
+    <p>GitHub: <a href="https://github.com/thanusha-stack" target="_blank" style="color: #00a5e6;">https://github.com/thanusha-stack</a></p>
+  </div>
+</div>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("OVN4ePYf4s46aWsfn"); 
+  })();
+
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_t26vl48', 'template_b2sxtqj', this)
+      .then(() => {
+        alert('Message sent successfully!');
+        this.reset();
+      }, (error) => {
+        alert('Failed to send message. Please try again.');
+        console.error(error);
+      });
+  });
+</script>
+
+
 </body>
 </html>
 <script>
@@ -140,5 +305,40 @@
   const mainImage = document.getElementById("mainImage");
   mainImage.src = imageSrc;
 }
+ function updateMainImage2(imageSrc) {
+  const mainImage = document.getElementById("mainImage2");
+  mainImage2.src = imageSrc;
+}
+function updateMainImage(imageSrc) {
+  document.getElementById("mainImage").src = imageSrc;
+}
+function updateMainImage2(imageSrc) {
+  document.getElementById("mainImage2").src = imageSrc;
+}
+const projectScroll = document.getElementById('projectScroll');
+const customThumbProjects = document.getElementById('customThumbProjects');
+const projectScrollbar = document.querySelector('.projects .custom-scrollbar');
+
+projectScroll.addEventListener('scroll', () => {
+  const scrollRatio = projectScroll.scrollLeft / (projectScroll.scrollWidth - projectScroll.clientWidth);
+  const thumbWidth = projectScrollbar.clientWidth * (projectScroll.clientWidth / projectScroll.scrollWidth);
+  customThumbProjects.style.width = `${thumbWidth}px`;
+  customThumbProjects.style.transform = `translateX(${scrollRatio * (projectScrollbar.clientWidth - thumbWidth)}px)`;
+});
+
+projectScroll.dispatchEvent(new Event('scroll'));
+
+  const scrollArea = document.getElementById('scrollArea');
+  const customThumb = document.getElementById('customThumb');
+  const scrollbar = document.querySelector('.custom-scrollbar');
+
+  scrollArea.addEventListener('scroll', () => {
+    const scrollRatio = scrollArea.scrollLeft / (scrollArea.scrollWidth - scrollArea.clientWidth);
+    const thumbWidth = scrollbar.clientWidth * (scrollArea.clientWidth / scrollArea.scrollWidth);
+    customThumb.style.width = `${thumbWidth}px`;
+    customThumb.style.transform = `translateX(${scrollRatio * (scrollbar.clientWidth - thumbWidth)}px)`;
+  });
+
+  scrollArea.dispatchEvent(new Event('scroll'));
 
 </script>
