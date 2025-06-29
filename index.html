@@ -2,344 +2,864 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="FQjv0NItDHVLlCd9CD4k4VKy9TBaRT_G8wLOv8Ni0h8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="./src/assets/images/logoHireElite.png" />
-    <title>Portfolio</title>
+    <title>Thanusha - Full-stack Developer</title>
     <style>
-    
-  .scroll-wrapper {
-    position: relative;
-    width: 100%;
-  }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-  .scroll-area {
-    display: flex;
-    gap: 50px;
-    overflow-x: auto;
-    padding-bottom: 20px;
-    width: 100%;
-    max-width: 1200px;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Hide default scrollbar in Firefox */
-  }
+        body {
+            background-color: #0a0a0a;
+            color: #fffdfd;
+        }
 
-  .scroll-area::-webkit-scrollbar {
-    display: none; /* Hide default scrollbar in Chrome/Safari */
-  }
-
-  .custom-scrollbar {
-    position: absolute;
-    bottom: 2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 400px; /* 👈 Control scrollbar length here */
-    height: 6px;
-    background-color: #434343;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .custom-thumb {
-    width: 50%; /* will be updated dynamically with JS */
-    height: 100%;
-    background-color: #00a5e6;
-    border-radius: 10px;
-  }
-
-
-        nav{
+        nav {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: #0c0d0f;
+            position: sticky;
+            top: 0;
+            border-bottom: #00a5e6 1px solid;
+            z-index: 100;
         }
-        li:hover {
-            color: #007bff; 
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00a5e6;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fffdfd;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00a5e6;
+        }
+
+        .hamburger {
+            display: none;
             cursor: pointer;
         }
-        button{
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fffdfd;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Home Section */
+        .Home {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            padding: 20px;
+            min-height: calc(100vh - 70px);
+        }
+
+        .home-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .home-text {
+            max-width: 600px;
+        }
+
+        .home-text h1 {
+            font-weight: bolder;
+            font-size: 30px;
+            color: #fffdfd;
+            margin-bottom: 10px;
+        }
+
+        .home-text h2 {
+            font-weight: bolder;
+            font-size: 30px;
+            color: #00a5e6;
+            margin-bottom: 10px;
+        }
+
+        .home-text p {
+            font-size: 18px;
+            color: #c3c1c1;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .home-text button {
+            color: rgb(0, 0, 0);
+            border: none;
+            font-weight: bolder;
+            font-size: medium;
+            border-radius: 4px;
+            background-color: #00a5e6;
+            padding: 10px 20px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
-        button:hover {
-            background-color: #000000; 
-            color: #007bff;
+
+        .home-text button:hover {
+            background-color: #088395;
         }
-        .project-display {
-  text-align: center;
-  margin: 20px;
-}
 
-.main-image img {
-  width: 80%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 15px;
-}
-html {
-  scroll-behavior: smooth;
-}
+        .home-image {
+            height: 400px;
+            width: 305px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #00a5e6;
+            background-color: #00a5e6;
+            object-fit: cover;
+        }
 
+        /* Expertise Section */
+        .Expertise {
+            margin-top: 50px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: left;
+        }
 
-.main-image2 img {
-  width: 80%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 15px;
-}
-.sub-images {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
+        .section-title {
+            font-size: 40px;
+            font-weight: bolder;
+            color: #00a5e6;
+            margin-bottom: 30px;
+            text-align: center;
+        }
 
-.sub-image {
-  width: 80px;
-  height: 80px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: 2px solid transparent;
-  transition: transform 0.3s, border-color 0.3s;
-}
+        .scroll-wrapper {
+            width: 100%;
+            position: relative;
+            margin-bottom: 30px;
+        }
 
-.sub-image:hover {
-  transform: scale(1.1);
-  border-color: #0073e6;
-}
-.custom-scrollbar::-webkit-scrollbar {
-    height: 6px;
-  }
+        .scroll-area {
+            overflow-x: auto;
+            margin: 20px;
+            display: flex;
+            gap: 30px;
+            padding-bottom: 20px;
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+        }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #00a5e6;
-    border-radius: 10px;
-  }
+        .scroll-area::-webkit-scrollbar {
+            display: none;
+        }
 
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background-color: #434343;
-  }
+        .expertise-card {
+            border: 1px solid #fffdfd7e;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            padding: 20px;
+            border-radius: 3px;
+            background-image: linear-gradient(135deg, #071952 10%, #088395 100%);
+            flex-shrink: 0;
+        }
 
-  .custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: #00a5e6 #434343;
-  }
+        .expertise-card h3 {
+            border-bottom: 1px solid #fffdfd7e;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
 
+        .expertise-card p {
+            padding-top: 10px;
+            margin-bottom: 15px;
+            min-height: 80px;
+        }
+
+        .expertise-card img {
+            height: 250px;
+            width: 250px;
+            object-fit: contain;
+            align-self: center;
+        }
+
+        .custom-scrollbar {
+            height: 6px;
+            background: #333;
+            border-radius: 3px;
+            margin: 0 20px;
+            position:relative;
+            width: 100%;
+        }
+
+        .custom-thumb {
+            height: 100%;
+            background: #00a5e6;
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+
+        /* Skills Section */
+        .skills {
+            margin-top: 50px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 900px;
+        }
+
+        .skills-container img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .skills-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .projects {
+            margin-top: 50px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #071952 0%, #088395 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 165, 230, 0.2);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image-container {
+            position: relative;
+            width: 100%;
+            height: 80%;
+            overflow: hidden;
+        }
+
+        .project-main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            align-content: center;
+        }
+
+        .project-card:hover .project-main-image {
+            transform: scale(1.05);
+        }
+
+        .project-thumbnails {
+            display: flex;
+            gap: 10px;
+            padding: 15px;
+            overflow-x: auto;
+            background: rgba(7, 25, 82, 0.7);
+            scrollbar-width: thin;
+            scrollbar-color: #00a5e6 #071952;
+        }
+
+        .project-thumbnails::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .project-thumbnails::-webkit-scrollbar-track {
+            background: #071952;
+            border-radius: 3px;
+        }
+
+        .project-thumbnails::-webkit-scrollbar-thumb {
+            background-color: #00a5e6;
+            border-radius: 3px;
+        }
+
+        .project-thumbnail {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .project-thumbnail:hover, 
+        .project-thumbnail.active {
+            border-color: #00a5e6;
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 25px;
+            color: #fff;
+        }
+
+        .project-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #00a5e6;
+        }
+
+        .project-description {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(0, 165, 230, 0.2);
+            color: #00a5e6;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #00a5e6;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: #088395;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 165, 230, 0.4);
+        }
+
+        .project-link.secondary {
+            background: transparent;
+            border: 2px solid #00a5e6;
+            color: #00a5e6;
+        }
+
+        .project-link.secondary:hover {
+            background: rgba(0, 165, 230, 0.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            padding: 40px 20px;
+            background-color: #1a1a1a;
+            border-top: 1px solid #00a5e6;
+            width: 100%;
+        }
+
+        #contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 600px;
+            background-color: #2e2e2e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 165, 230, 0.2);
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background-color: #1f1f1f;
+            color: white;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        #contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        #contact-form button {
+            padding: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #00a5e6;
+            color: black;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #contact-form button:hover {
+            background-color: #088395;
+        }
+
+        .contact-links {
+            margin-top: 30px;
+            color: #c3c1c1;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .contact-links p {
+            margin-bottom: 10px;
+        }
+
+        .contact-links a {
+            color: #00a5e6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                height: calc(100vh - 70px);
+                width: 50%;
+                background-color: #071952;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 30px;
+                transition: right 0.5s ease;
+            }
+
+            .nav-links.show {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .home-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .home-text {
+                text-align: center;
+            }
+
+            .home-image {
+                height: 280px;
+                width: 240px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .expertise-card {
+                width: 280px;
+            }
+
+            .skills-container img {
+                height: 60px;
+            }
+
+            .project-image-container {
+                height: 250px;
+            }
+            
+            .project-content {
+                padding: 20px;
+            }
+            
+            .project-title {
+                font-size: 22px;
+            }
+            
+            .project-links {
+                flex-direction: column;
+            }
+            
+            .project-link {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-text h1, .home-text h2 {
+                font-size: 24px;
+            }
+
+            .home-text p {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .expertise-card {
+                width: 260px;
+                padding: 15px;
+            }
+
+            .expertise-card img {
+                height: 200px;
+                width: 200px;
+            }
+
+            .skills-container {
+                gap: 20px;
+            }
+
+            .skills-container img {
+                height: 50px;
+            }
+
+            #contact-form {
+                padding: 20px;
+            }
+
+            .project-image-container {
+                height: 200px;
+            }
+            
+            .project-thumbnail {
+                width: 70px;
+                height: 50px;
+            }
+            
+            .project-content {
+                padding: 15px;
+            }
+            
+            .project-title {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
-<body style="background-image: linear-gradient(135deg, #434343 10%, #000000 100%);color: white;font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-    <nav > 
-        <ul style="display:flex; gap: 50px; align-items: center;">
-        <div style="padding: 10px; width: 400px; ">PORTFOLIO</div>
-        <li style="list-style: none;padding: 10px; cursor: pointer;"  ><a href="#home"  style="color: white; text-decoration: none;">HOME</a></li>
-        <li style="list-style: none;padding: 10px; cursor: pointer;"  ><a href="#expertise"  style="color: white; text-decoration: none;">EXPERTISE</a></li>
-        <li style="list-style: none;padding: 10px; cursor: pointer;"  ><a href="#skills"  style="color: white; text-decoration: none;"> SKILLS</a> </li>
-        <li style="list-style: none;padding: 10px; cursor: pointer;"  ><a href="#projects"  style="color: white; text-decoration: none;"> PROJECTS</a></li>
-        <li style="list-style: none;padding: 10px; cursor: pointer;"  ><a href="#contacts"  style="color: white; text-decoration: none;"> CONTACT</a></li>
-        </ul> 
+<body>
+    <nav>
+        <div class="logo">Thanusha</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contacts">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </nav>
-    <div class="Home" id="home" style="display: flex; flex-direction: column; align-items: center; text-align: left; padding: 20px;">
-        <div style="display: flex; align-items: center; gap: 50px; margin-top: 50px;">
-            <div>
-                <p style="font-weight: bolder; font-size: 30px; color: #fffdfd; margin-bottom: 10px;">Hi! I am Thanusha.</p>
-                <p style="font-weight: bolder; font-size: 30px; color: #00a5e6; margin-bottom: 10px;">Junior Full-stack Developer | Machine Learning Enthusiast</p>
-                <p style="font-size: 18px; color: #c3c1c1; line-height: 1.6; max-width: 600px;">I'm a full-stack developer with a passion for building dynamic and user-friendly web applications. 
+
+    <div class="Home" id="home">
+        <div class="home-content">
+            <div class="home-text">
+                <h1>Hi! I am Thanusha.</h1>
+                <h2>Junior Full-stack Developer | Machine Learning Enthusiast</h2>
+                <p>I'm a full-stack developer with a passion for building dynamic and user-friendly web applications. 
                     I enjoy learning new technologies and solving complex problems to create impactful solutions.</p>
-                <a href="./Thanusha_Resume (1).pdf" download style="text-decoration: none;">
-                <button style="color: rgb(0, 0, 0); border: none; font-weight: bolder; font-size: medium; border-color: #000000; border-radius: 4px; background-color: #00a5e6; padding: 10px 20px; margin-top: 20px;">View Resume</button>
+                <a href="./Thanusha_Resume (1).pdf" download>
+                    <button>View Resume</button>
                 </a>
-              </div>
-            <img style="height: 360px; width: 305px; border-radius: 50%; box-shadow: 0 0 20px #00a5e6;background-color: #00a5e6;" src="./Untitled_design-removebg-preview.png" alt="Thanusha's photo" />
+            </div>
+            <img class="home-image" src="./Untitled_design-removebg-preview.png" alt="Thanusha's photo">
         </div>
     </div>
-    <div class="Expertise" id="expertise" style="display:flex ; margin-top: 50px; align-items: center; flex-direction: column;text-align: left;">
-        <div style="font-size: 40px; font-weight:bolder;color:#00a5e6 ;display:flex ; flex-direction: column; align-items: center; text-align: left; padding: 20px; border-radius: 15px; ">MY EXPERTISE</div>
 
-
+    <div class="Expertise" id="expertise">
+        <h2 class="section-title">MY EXPERTISE</h2>
 
         <div class="scroll-wrapper">
-            <div id="scrollArea" class="scroll-area" style="overflow-x: auto; margin: 20px; margin-left: 50px; display: flex; gap: 50px;">
-                <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%); flex-shrink: 0;" >
-                    <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Frontend Develoment</span> 
-                    <span style="padding-top: 10px;">Proficient in HTML, CSS, JavaScript, React, Tailwind CSS, crafting interactive and responsive user interfaces.</span>
-                    <img src="./Application-development.png" style="height: 250px;width: 250px;"/>
+            <div id="scrollArea" class="scroll-area">
+                <div class="expertise-card">
+                    <h3>Frontend Development</h3>
+                    <p>Proficient in HTML, CSS, JavaScript, React, Tailwind CSS, crafting interactive and responsive user interfaces.</p>
+                    <img src="./Application-development.png" alt="Frontend Development">
                 </div>
                 
-                <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%); flex-shrink: 0;" >
-                    <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Backend Development</span> 
-                    <span style="padding-top: 10px;"> Skilled in Node.js, Express.js, Flask for building scalable server-side applications.</span>
-                    <img src="./Programming-Skills.png" style="height: 250px;width: 250px;"/>
+                <div class="expertise-card">
+                    <h3>Backend Development</h3>
+                    <p>Skilled in Node.js, Express.js, Flask for building scalable server-side applications.</p>
+                    <img src="./Programming-Skills.png" alt="Backend Development">
                 </div>
                 
-                <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%); flex-shrink: 0;" >
-                    <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Database Management</span> 
-                    <span style="padding-top: 10px;">Hands-on experience with SQL, MongoDB for secure and efficient data handling.</span>
-                    <img src="Programing.png" style="height: 250px;width: 250px;"/>
+                <div class="expertise-card">
+                    <h3>Database Management</h3>
+                    <p>Hands-on experience with SQL, MongoDB for secure and efficient data handling.</p>
+                    <img src="Programing.png" alt="Database Management">
                 </div>
                 
-                <div style="border: #fffdfd7e; border-style: solid;display: flex;flex-direction: column;width:300px ;padding: 20px; border-radius:3px ;background-image: linear-gradient(135deg, #071952 10%, #088395 100%); flex-shrink: 0;" >
-                    <span style="border-bottom: #fffdfd7e; border-style: solid; border-top: 0; border-left: 0;border-right: 0;padding-bottom: 10px; ">Machine Learning</span> 
-                    <span style="padding-top: 10px;">Skilled in Python, TensorFlow, Scikit-learn for building ML models. Experienced in Data Preprocessing, Feature Engineering, and Model Optimization.</span>
-                    <img src="Programing.png" style="height: 250px;width: 250px;"/>
+                <div class="expertise-card">
+                    <h3>Machine Learning</h3>
+                    <p>Skilled in Python, TensorFlow, Scikit-learn for building ML models. Experienced in Data Preprocessing, Feature Engineering, and Model Optimization.</p>
+                    <img src="Programing.png" alt="Machine Learning">
                 </div>
             </div>
             <div class="custom-scrollbar">
-              <div id="customThumb" class="custom-thumb"></div>
+                <div id="customThumb" class="custom-thumb"></div>
             </div>
-          </div>
-          
+        </div>
+    </div>
+
+    <div class="skills" id="skills">
+        <h2 class="section-title">SKILLS</h2>
+        <div class="skills-container">
+            <img src="./image.png" alt="Skill">
+            <img src="./image copy.png" alt="Skill">
+            <img src="./image copy 2.png" alt="Skill">
+            <img src="./image copy 3.png" alt="Skill">
+            <img src="./image copy 6.png" alt="Skill">
+            <img src="./image copy 4.png" alt="Skill">
+            <img src="./image copy 5.png" alt="Skill">
+            <img src="./image copy 7.png" alt="Skill">
+            <img src="./image copy 8.png" alt="Skill">
+            <img src="./image copy 9.png" alt="Skill">
+        </div>
+    </div>
+
+    <div class="projects" id="projects">
+        <h2 class="section-title">PROJECTS</h2>
+        
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image-container">
+                    <img id="freelancer-main" src="./Screenshot 2025-01-04 143141.png" alt="Freelancer Platform" class="project-main-image">
+                </div>
+                <div class="project-thumbnails">
+                    <img src="./Screenshot 2025-01-04 143141.png" class="project-thumbnail active" onclick="showProjectImage('freelancer-main', this)">
+                    <img src="./Screenshot 2025-01-04 143157.png" class="project-thumbnail" onclick="showProjectImage('freelancer-main', this)">
+                    <img src="./Screenshot 2025-01-04 143211.png" class="project-thumbnail" onclick="showProjectImage('freelancer-main', this)">
+                    <img src="./Screenshot 2025-01-04 143253.png" class="project-thumbnail" onclick="showProjectImage('freelancer-main', this)">
+                    <img src="./Screenshot 2025-01-04 143429.png" class="project-thumbnail" onclick="showProjectImage('freelancer-main', this)">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Freelancer Recruitment Platform</h3>
+                    <p class="project-description">
+                        A comprehensive web application connecting freelancers with recruiters. Features include user authentication, 
+                        job listings, and a real-time messaging system for seamless communication between parties.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image-container">
+                    <img id="water-main" src="./1.png" alt="Water Potability Project" class="project-main-image">
+                </div>
+                <div class="project-thumbnails">
+                    <img src="./1.png" class="project-thumbnail active" onclick="showProjectImage('water-main', this)">
+                    <img src="./2.png" class="project-thumbnail" onclick="showProjectImage('water-main', this)">
+                    <img src="./3.png" class="project-thumbnail" onclick="showProjectImage('water-main', this)">
+                    <img src="./4.png" class="project-thumbnail" onclick="showProjectImage('water-main', this)">
+                    <img src="./31.png" class="project-thumbnail" onclick="showProjectImage('water-main', this)">
+                    <img src="./6.png" class="project-thumbnail" onclick="showProjectImage('water-main', this)">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Water Potability Prediction with Geospatial Insights</h3>
+                    <p class="project-description">
+                        An innovative web application that predicts water safety in various regions using machine learning. 
+                        Provides geospatial visualization of water quality data to promote awareness and better decision-making.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Leaflet.js</span>
+                        <span class="tech-tag">CPCB Dataset</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact" id="contacts">
+        <h2 class="section-title">CONTACT</h2>
+
+        <form id="contact-form">
+            <input type="text" name="user_name" placeholder="Your Name" required>
+            <input type="email" name="user_email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-links">
+            <p>Email: <a href="mailto:thanusha13062006@gmail.com">thanusha13062006@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/thanusha-arikrishnan-5a7169300/" target="_blank">https://www.linkedin.com/in/thanusha-arikrishnan-5a7169300/</a></p>
+            <p>GitHub: <a href="https://github.com/thanusha-stack" target="_blank">https://github.com/thanusha-stack</a></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("OVN4ePYf4s46aWsfn");
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            emailjs.sendForm('service_t26vl48', 'template_b2sxtqj', this)
+                .then(() => {
+                    alert('Message sent successfully!');
+                    this.reset();
+                }, (error) => {
+                    alert('Failed to send message. Please try again.');
+                    console.error(error);
+                });
+        });
+
+        const hamburger = document.getElementById("hamburger");
+        const navMenu = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("show");
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("show");
+            });
+        });
+
+        function showProjectImage(mainImageId, thumbnail) {
+            const thumbnails = thumbnail.parentElement.querySelectorAll('.project-thumbnail');
+            
+            thumbnails.forEach(t => t.classList.remove('active'));
+            
+            thumbnail.classList.add('active');
+            
+            const mainImage = document.getElementById(mainImageId);
+            mainImage.src = thumbnail.src;
        
-    </div>
-    </div>
-    </div>
-    <div class="skills" id="skills" style="display:flex;margin-top: 50px;align-items: center;flex-direction: column;">
-    <div style="font-size: 40px; font-weight:bolder;color:#00a5e6 ; padding: 20px; border-radius: 15px; ">SKILLS</div>
-    <div style="display:flex;gap: 50px;">
-    <img src="./image.png"/>
-    <img src="./image copy.png"/>
-    <img src="./image copy 2.png"/>
-    <img src="./image copy 3.png"/>
-    <img src="./image copy 6.png"/>
-    <img src="./image copy 4.png"/>
-    <img src="./image copy 5.png"/>
-    </div><div style="display: flex;gap:50px;">
-    <img src="./image copy 7.png"/>
-    <img src="./image copy 8.png"/>
-    <img src="./image copy 9.png"/>
-    </div>
-    </div>
-<div class="projects" id="projects" style="display: flex; margin-top: 50px; align-items: center; flex-direction: column;">
-  <div style="font-size: 40px; font-weight: bolder; color: #00a5e6; display: flex; flex-direction: column; align-items: center; text-align: left; padding-bottom: 0px; margin-bottom: 0px; border-radius: 15px;">PROJECTS</div>
+            mainImage.style.transform = 'scale(1.03)';
+            setTimeout(() => {
+                mainImage.style.transform = 'scale(1)';
+            }, 300);
+        }
 
-  <div class="scroll-wrapper">
-  <div id="projectScroll" class="scroll-area" style="margin: 0px; padding: 10px; display: flex; gap: 30px;">
+        const projectScroll = document.getElementById('scrollArea');
+        const customThumb = document.getElementById('customThumb');
+        const scrollbar = document.querySelector('.Expertise .custom-scrollbar');
 
-      <div class="project-display" style="flex: 0 0 100%; max-width: 800px;">
-        <div class="main-image">
-          <div style="font-weight: bold; font-size: 24px;">Freelancer Recruitment Platform</div>
-          <img id="mainImage" src="./Screenshot 2025-01-04 143141.png" alt="Main Project Image">
-        </div>
-        <div class="sub-images">
-          <img class="sub-image" src="./Screenshot 2025-01-04 143141.png" onclick="updateMainImage('./Screenshot 2025-01-04 143141.png')">
-          <img class="sub-image" src="./Screenshot 2025-01-04 143157.png" onclick="updateMainImage('./Screenshot 2025-01-04 143157.png')">
-          <img class="sub-image" src="./Screenshot 2025-01-04 143211.png" onclick="updateMainImage('./Screenshot 2025-01-04 143211.png')">
-          <img class="sub-image" src="./Screenshot 2025-01-04 143253.png" onclick="updateMainImage('./Screenshot 2025-01-04 143253.png')">
-          <img class="sub-image" src="./Screenshot 2025-01-04 143429.png" onclick="updateMainImage('./Screenshot 2025-01-04 143429.png')">
-        </div>
-        <div style="margin-top: 20px; color: #c3c1c1;">
-          <p>This project is a comprehensive web application designed to connect freelancers with recruiters. 
-          It features user authentication, job listings, and a messaging system for seamless communication.</p>
-          <p>Technologies Used: React, Node.js, Express.js, MongoDB, Tailwind CSS</p>
-        </div>
-      </div>
+        projectScroll.addEventListener('scroll', () => {
+            const scrollRatio = projectScroll.scrollLeft / (projectScroll.scrollWidth - projectScroll.clientWidth);
+            const thumbWidth = scrollbar.clientWidth * (projectScroll.clientWidth / projectScroll.scrollWidth);
+            customThumb.style.width = `${thumbWidth}px`;
+            customThumb.style.transform = `translateX(${scrollRatio * (scrollbar.clientWidth - thumbWidth)}px)`;
+        });
 
-      <div class="project-display" style="flex: 0 0 80%; max-width: 800px;">
-        <div class="main-image2">
-          <div style="font-weight: bold; font-size: 24px;">Water Potability Prediction with Geospatial Insights</div>
-          <img id="mainImage2" src="./1.png" alt="Main Project Image">
-        </div>
-        <div class="sub-images">
-          <img class="sub-image" src="./1.png" onclick="updateMainImage2('./1.png')">
-          <img class="sub-image" src="./2.png" onclick="updateMainImage2('./2.png')">
-          <img class="sub-image" src="./3.png" onclick="updateMainImage2('./3.png')">
-          <img class="sub-image" src="./4.png" onclick="updateMainImage2('./4.png')">
-          <img class="sub-image" src="./31.png" onclick="updateMainImage2('./31.png')">
-          <img class="sub-image" src="./6.png" onclick="updateMainImage2('./6.png')">
-        </div>
-        <div style="margin-top: 20px; color: #c3c1c1;">
-          <p>This web-based application provides an intuitive platform for users to check water safety in various regions, helping promote awareness and better decision-making regarding water consumption.</p>
-          <p>Technologies Used: Python, Flask, Random Forest, Gradient Boosting, SMOTE, HTML, CSS, JavaScript, Leaflet.js, CPCB Dataset</p>
-        </div>
-      </div>
-    </div>
-    <div class="custom-scrollbar">
-      <div id="customThumbProjects" class="custom-thumb"></div>
-    </div>
-  </div>
-</div>
+        projectScroll.dispatchEvent(new Event('scroll'));
 
-<div class="contact" id="contacts" style="display: flex; flex-direction: column; align-items: center; margin-top: 50px; padding: 40px; background-color: #1a1a1a; border-top: 2px solid #00a5e6;">
-  <div style="font-size: 40px; font-weight: bolder; color: #00a5e6; margin-bottom: 30px;">CONTACT</div>
-
- <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 600px; background-color: #2e2e2e; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 165, 230, 0.2);">
-  <input type="text" name="user_name" placeholder="Your Name" required style="padding: 15px; border-radius: 8px; border: 1px solid #444; background-color: #1f1f1f; color: white; font-size: 16px;">
-  
-  <input type="email" name="user_email" placeholder="Your Email" required style="padding: 15px; border-radius: 8px; border: 1px solid #444; background-color: #1f1f1f; color: white; font-size: 16px;">
-  
-  <textarea name="message" placeholder="Your Message" rows="5" required style="padding: 15px; border-radius: 8px; border: 1px solid #444; background-color: #1f1f1f; color: white; font-size: 16px; resize: vertical;"></textarea>
-  
-  <button type="submit" style="padding: 15px; font-weight: bold; font-size: 16px; border: none; border-radius: 8px; background-color: #00a5e6; color: black; cursor: pointer; transition: background-color 0.3s;">
-    Send Message
-  </button>
-</form>
-
-
-  <div style="margin-top: 30px; color: #c3c1c1; font-size: 16px; text-align: center;">
-    <p>Email: <a href="thanusha13062006@gmail.com" style="color: #00a5e6;">thanusha13062006@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/thanusha-arikrishnan-5a7169300/" target="_blank" style="color: #00a5e6;">https://www.linkedin.com/in/thanusha-arikrishnan-5a7169300/</a></p>
-    <p>GitHub: <a href="https://github.com/thanusha-stack" target="_blank" style="color: #00a5e6;">https://github.com/thanusha-stack</a></p>
-  </div>
-</div>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function() {
-    emailjs.init("OVN4ePYf4s46aWsfn"); 
-  })();
-
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    emailjs.sendForm('service_t26vl48', 'template_b2sxtqj', this)
-      .then(() => {
-        alert('Message sent successfully!');
-        this.reset();
-      }, (error) => {
-        alert('Failed to send message. Please try again.');
-        console.error(error);
-      });
-  });
-</script>
-
-
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-<script>
-    function updateMainImage(imageSrc) {
-  const mainImage = document.getElementById("mainImage");
-  mainImage.src = imageSrc;
-}
- function updateMainImage2(imageSrc) {
-  const mainImage = document.getElementById("mainImage2");
-  mainImage2.src = imageSrc;
-}
-function updateMainImage(imageSrc) {
-  document.getElementById("mainImage").src = imageSrc;
-}
-function updateMainImage2(imageSrc) {
-  document.getElementById("mainImage2").src = imageSrc;
-}
-const projectScroll = document.getElementById('projectScroll');
-const customThumbProjects = document.getElementById('customThumbProjects');
-const projectScrollbar = document.querySelector('.projects .custom-scrollbar');
-
-projectScroll.addEventListener('scroll', () => {
-  const scrollRatio = projectScroll.scrollLeft / (projectScroll.scrollWidth - projectScroll.clientWidth);
-  const thumbWidth = projectScrollbar.clientWidth * (projectScroll.clientWidth / projectScroll.scrollWidth);
-  customThumbProjects.style.width = `${thumbWidth}px`;
-  customThumbProjects.style.transform = `translateX(${scrollRatio * (projectScrollbar.clientWidth - thumbWidth)}px)`;
-});
-
-projectScroll.dispatchEvent(new Event('scroll'));
-
-  const scrollArea = document.getElementById('scrollArea');
-  const customThumb = document.getElementById('customThumb');
-  const scrollbar = document.querySelector('.custom-scrollbar');
-
-  scrollArea.addEventListener('scroll', () => {
-    const scrollRatio = scrollArea.scrollLeft / (scrollArea.scrollWidth - scrollArea.clientWidth);
-    const thumbWidth = scrollbar.clientWidth * (scrollArea.clientWidth / scrollArea.scrollWidth);
-    customThumb.style.width = `${thumbWidth}px`;
-    customThumb.style.transform = `translateX(${scrollRatio * (scrollbar.clientWidth - thumbWidth)}px)`;
-  });
-
-  scrollArea.dispatchEvent(new Event('scroll'));
-
-</script>
