@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="EGYjwXXnpUF_xdUGsNH8LsoTL5sDhKfBQAM0n7WFZiM" />
@@ -11,6 +12,11 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         body {
@@ -168,8 +174,8 @@
             display: flex;
             gap: 30px;
             padding-bottom: 20px;
-            scrollbar-width: none; 
-            -ms-overflow-style: none; 
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .scroll-area::-webkit-scrollbar {
@@ -211,7 +217,7 @@
             background: #333;
             border-radius: 3px;
             margin: 0 20px;
-            position:relative;
+            position: relative;
             width: 100%;
         }
 
@@ -339,7 +345,7 @@
             transition: all 0.3s ease;
         }
 
-        .project-thumbnail:hover, 
+        .project-thumbnail:hover,
         .project-thumbnail.active {
             border-color: #00a5e6;
             transform: scale(1.05);
@@ -499,6 +505,7 @@
                 justify-content: flex-start;
                 padding-top: 30px;
                 transition: right 0.5s ease;
+                z-index: 99;
             }
 
             .nav-links.show {
@@ -537,7 +544,12 @@
 
             .home-image {
                 height: 280px;
-                width: 240px;
+                width: 280px;
+                max-width: 80%;
+            }
+
+            .home-content {
+                flex-direction: column-reverse;
             }
 
             .section-title {
@@ -555,19 +567,25 @@
             .project-image-container {
                 height: 250px;
             }
-            
+
             .project-content {
                 padding: 20px;
             }
-            
+
             .project-title {
                 font-size: 22px;
             }
-            
+
             .project-links {
                 flex-direction: column;
+                gap: 10px;
             }
-            
+
+            .projects-container {
+                width: 95%;
+                padding: 10px;
+            }
+
             .project-link {
                 width: 100%;
                 text-align: center;
@@ -575,7 +593,9 @@
         }
 
         @media (max-width: 480px) {
-            .home-text h1, .home-text h2 {
+
+            .home-text h1,
+            .home-text h2 {
                 font-size: 24px;
             }
 
@@ -593,8 +613,9 @@
             }
 
             .expertise-card img {
-                height: 200px;
-                width: 200px;
+                height: 150px;
+                width: 100%;
+                object-fit: contain;
             }
 
             .skills-container {
@@ -612,22 +633,27 @@
             .project-image-container {
                 height: 200px;
             }
-            
+
             .project-thumbnail {
                 width: 70px;
                 height: 50px;
             }
-            
+
             .project-content {
                 padding: 15px;
             }
-            
+
             .project-title {
                 font-size: 20px;
+            }
+
+            .nav-links {
+                width: 70%;
             }
         }
     </style>
 </head>
+
 <body>
     <nav>
         <div class="logo">Thanusha</div>
@@ -650,7 +676,7 @@
             <div class="home-text">
                 <h1>Hi! I am Thanusha.</h1>
                 <h2>Junior Full-stack Developer | Machine Learning Enthusiast</h2>
-                <p>I'm a full-stack developer with a passion for building dynamic and user-friendly web applications. 
+                <p>I'm a full-stack developer with a passion for building dynamic and user-friendly web applications.
                     I enjoy learning new technologies and solving complex problems to create impactful solutions.</p>
                 <a href="./assets/ThanushaA_Resume (9).pdf" download>
                     <button>View Resume</button>
@@ -667,25 +693,27 @@
             <div id="scrollArea" class="scroll-area">
                 <div class="expertise-card">
                     <h3>Frontend Development</h3>
-                    <p>Proficient in HTML, CSS, JavaScript, React, Tailwind CSS, crafting interactive and responsive user interfaces.</p>
+                    <p>Proficient in HTML, CSS, JavaScript, React, Tailwind CSS, crafting interactive and responsive
+                        user interfaces.</p>
                     <img src="./assets/Application-development.png" alt="Frontend Development">
                 </div>
-                
+
                 <div class="expertise-card">
                     <h3>Backend Development</h3>
                     <p>Skilled in Node.js, Express.js, Flask for building scalable server-side applications.</p>
                     <img src="./assets/Programming-Skills.png" alt="Backend Development">
                 </div>
-                
+
                 <div class="expertise-card">
                     <h3>Database Management</h3>
                     <p>Hands-on experience with SQL, MongoDB for secure and efficient data handling.</p>
                     <img src="./assets/Programing.png" alt="Database Management">
                 </div>
-                
+
                 <div class="expertise-card">
                     <h3>Machine Learning</h3>
-                    <p>Skilled in Python, TensorFlow, Scikit-learn for building ML models. Experienced in Data Preprocessing, Feature Engineering, and Model Optimization.</p>
+                    <p>Skilled in Python, TensorFlow, Scikit-learn for building ML models. Experienced in Data
+                        Preprocessing, Feature Engineering, and Model Optimization.</p>
                     <img src="./assets/Programing.png" alt="Machine Learning">
                 </div>
             </div>
@@ -713,25 +741,32 @@
 
     <div class="projects" id="projects">
         <h2 class="section-title">PROJECTS</h2>
-        
+
         <div class="projects-container">
             <!-- Project 1 -->
             <div class="project-card">
                 <div class="project-image-container">
-                    <img id="freelancer-main" src="./assets/Screenshot 2025-01-04 143141.png" alt="Freelancer Platform" class="project-main-image">
+                    <img id="freelancer-main" src="./assets/Screenshot 2025-01-04 143141.png" alt="Freelancer Platform"
+                        class="project-main-image">
                 </div>
                 <div class="project-thumbnails">
-                    <img src="./assets/Screenshot 2025-01-04 143141.png" class="project-thumbnail active" onclick="showProjectImage('freelancer-main', this)">
-                    <img src="./assets/Screenshot 2025-01-04 143157.png" class="project-thumbnail" onclick="showProjectImage('freelancer-main', this)">
-                    <img src="./assets/Screenshot 2025-01-04 143211.png" class="project-thumbnail" onclick="showProjectImage('freelancer-main', this)">
-                    <img src="./assets/Screenshot 2025-01-04 143253.png" class="project-thumbnail" onclick="showProjectImage('freelancer-main', this)">
-                    <img src="./assets/Screenshot 2025-01-04 143429.png" class="project-thumbnail" onclick="showProjectImage('freelancer-main', this)">
+                    <img src="./assets/Screenshot 2025-01-04 143141.png" class="project-thumbnail active"
+                        onclick="showProjectImage('freelancer-main', this)">
+                    <img src="./assets/Screenshot 2025-01-04 143157.png" class="project-thumbnail"
+                        onclick="showProjectImage('freelancer-main', this)">
+                    <img src="./assets/Screenshot 2025-01-04 143211.png" class="project-thumbnail"
+                        onclick="showProjectImage('freelancer-main', this)">
+                    <img src="./assets/Screenshot 2025-01-04 143253.png" class="project-thumbnail"
+                        onclick="showProjectImage('freelancer-main', this)">
+                    <img src="./assets/Screenshot 2025-01-04 143429.png" class="project-thumbnail"
+                        onclick="showProjectImage('freelancer-main', this)">
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Freelancer Recruitment Platform</h3>
+                    <h3 class="project-title">HireElite - Freelancer Recruitment Platform</h3>
                     <p class="project-description">
-                        A comprehensive web application connecting freelancers with recruiters. Features include user authentication, 
-                        job listings, and a real-time messaging system for seamless communication between parties.
+                        A comprehensive web application connecting freelancers with recruiters. Features include user
+                        authentication,
+                        job listings, and a real-time notification system for seamless communication between parties.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">React</span>
@@ -739,16 +774,63 @@
                         <span class="tech-tag">MongoDB</span>
                         <span class="tech-tag">Tailwind CSS</span>
                     </div>
+                    <div class="project-links">
+                        <a href="https://hireelite.onrender.com" class="project-link" target="_blank">View Project</a>
+                        <a href="https://github.com/thanusha-stack/HireElite---Freelancers-Recruitment-platform"
+                            class="project-link secondary" target="_blank">GitHub</a>
+                    </div>
                 </div>
             </div>
-            
+            <!-- Project 3-->
+            <div class="project-card">
+                <div class="project-image-container">
+                    <img id="mysore-main" src="./assets/mysore2.png" alt="Mysore Trip Booking Website"
+                        class="project-main-image">
+                </div>
+
+                <div class="project-thumbnails">
+                    <img src="./assets/mysore2.png" class="project-thumbnail active"
+                        onclick="showProjectImage('mysore-main', this)">
+                    <img src="./assets/mysore4.png" class="project-thumbnail"
+                        onclick="showProjectImage('mysore-main', this)">
+                    <img src="./assets/mysore3.png" class="project-thumbnail"
+                        onclick="showProjectImage('mysore-main', this)">
+                    <img src="./assets/mysore1.png" class="project-thumbnail"
+                        onclick="showProjectImage('mysore-main', this)">
+                </div>
+
+                <div class="project-content">
+                    <h3 class="project-title">Travora Trip – MERN Travel Marketplace</h3>
+
+                    <p class="project-description">
+                        Travora Trip is a comprehensive full-stack MERN (MongoDB, Express, React, Node.js) platform
+                        designed for travel organizers and tourists. It facilitates seamless trip planning, dynamic
+                        itinerary management, and secure bookings with Razorpay integration.
+                    </p>
+
+                    <div class="project-tech">
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">Payment Flow</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://travora-trip.onrender.com" class="project-link" target="_blank">View
+                            Project</a>
+                        <a href="https://github.com/thanusha-stack/Travora-Trip---Trip-Booking-Payment-Website/tree/main/Showcase-Portfolio"
+                            class="project-link secondary" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
             <!-- Project 2 -->
             <div class="project-card">
                 <div class="project-image-container">
                     <img id="water-main" src="./assets/1.png" alt="Water Potability Project" class="project-main-image">
                 </div>
                 <div class="project-thumbnails">
-                    <img src="./assets/1.png" class="project-thumbnail active" onclick="showProjectImage('water-main', this)">
+                    <img src="./assets/1.png" class="project-thumbnail active"
+                        onclick="showProjectImage('water-main', this)">
                     <img src="./assets/2.png" class="project-thumbnail" onclick="showProjectImage('water-main', this)">
                     <img src="./assets/3.png" class="project-thumbnail" onclick="showProjectImage('water-main', this)">
                     <img src="./assets/4.png" class="project-thumbnail" onclick="showProjectImage('water-main', this)">
@@ -758,8 +840,10 @@
                 <div class="project-content">
                     <h3 class="project-title">Water Potability Prediction with Geospatial Insights</h3>
                     <p class="project-description">
-                        An innovative web application that predicts water safety in various regions using machine learning. 
-                        Provides geospatial visualization of water quality data to promote awareness and better decision-making.
+                        An innovative web application that predicts water safety in various regions using machine
+                        learning.
+                        Provides geospatial visualization of water quality data to promote awareness and better
+                        decision-making.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
@@ -768,67 +852,51 @@
                         <span class="tech-tag">Leaflet.js</span>
                         <span class="tech-tag">CPCB Dataset</span>
                     </div>
+                    <div class="project-links">
+                        <a href="https://github.com/thanusha-stack/water_quality_prediction"
+                            class="project-link secondary" target="_blank">GitHub</a>
+                    </div>
                 </div>
             </div>
-            <!-- Project 3-->
-             <div class="project-card">
-            <div class="project-image-container">
-                <img id="mysore-main" src="./assets/mysore2.png" alt="Mysore Trip Booking Website" class="project-main-image">
+
+
+            <div class="project-card">
+                <div class="project-image-container">
+                    <img id="news-main" src="./assets/news1.png" alt="Location Based News Website"
+                        class="project-main-image">
+                </div>
+
+                <div class="project-thumbnails">
+                    <img src="./assets/news1.png" class="project-thumbnail active"
+                        onclick="showProjectImage('news-main', this)">
+                    <img src="./assets/news2.png" class="project-thumbnail"
+                        onclick="showProjectImage('news-main', this)">
+                    <img src="./assets/news3.png" class="project-thumbnail"
+                        onclick="showProjectImage('news-main', this)">
+                    <img src="./assets/news4.png" class="project-thumbnail"
+                        onclick="showProjectImage('news-main', this)">
+                </div>
+
+                <div class="project-content">
+                    <h3 class="project-title">Location-Based News Retrieval System</h3>
+
+                    <p class="project-description">
+                        A news aggregation platform that delivers region-specific news based on user location.
+                        Helps users stay updated with local events through a clean and responsive interface.
+                    </p>
+
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">API Integration</span>
+                        <span class="tech-tag">Location Services</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/thanusha-stack/Map_based_News_Retrieval_System"
+                            class="project-link secondary" target="_blank">GitHub</a>
+                    </div>
+                </div>
             </div>
-
-            <div class="project-thumbnails">
-                <img src="./assets/mysore2.png" class="project-thumbnail active" onclick="showProjectImage('mysore-main', this)">
-                <img src="./assets/mysore4.png" class="project-thumbnail" onclick="showProjectImage('mysore-main', this)">
-                <img src="./assets/mysore3.png" class="project-thumbnail" onclick="showProjectImage('mysore-main', this)">
-                <img src="./assets/mysore1.png" class="project-thumbnail" onclick="showProjectImage('mysore-main', this)">
-            </div>
-
-        <div class="project-content">
-            <h3 class="project-title">Mysore Trip Booking & Payment System</h3>
-
-            <p class="project-description">
-                A travel booking platform designed for planning Mysore trips with advance payments,
-                booking management, and refund handling. Focused on a smooth UI and real-world
-                booking workflow.
-            </p>
-
-            <div class="project-tech">
-                <span class="tech-tag">Bootstrap</span>
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">MongoDB</span>
-                <span class="tech-tag">Express</span>
-                <span class="tech-tag">Payment Flow</span>
-            </div>
-        </div>
-    </div>
-    <div class="project-card">
-    <div class="project-image-container">
-        <img id="news-main" src="./assets/news1.png" alt="Location Based News Website" class="project-main-image">
-    </div>
-
-    <div class="project-thumbnails">
-        <img src="./assets/news1.png" class="project-thumbnail active" onclick="showProjectImage('news-main', this)">
-        <img src="./assets/news2.png" class="project-thumbnail" onclick="showProjectImage('news-main', this)">
-        <img src="./assets/news3.png" class="project-thumbnail" onclick="showProjectImage('news-main', this)">
-        <img src="./assets/news4.png" class="project-thumbnail" onclick="showProjectImage('news-main', this)">
-    </div>
-
-    <div class="project-content">
-        <h3 class="project-title">Location-Based News Retrieval System</h3>
-
-        <p class="project-description">
-            A news aggregation platform that delivers region-specific news based on user location.
-            Helps users stay updated with local events through a clean and responsive interface.
-        </p>
-
-        <div class="project-tech">
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">API Integration</span>
-            <span class="tech-tag">Location Services</span>
-        </div>
-    </div>
-</div>    
         </div>
     </div>
 
@@ -844,18 +912,20 @@
 
         <div class="contact-links">
             <p>Email: <a href="mailto:thanusha13062006@gmail.com">thanusha13062006@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/thanusha-arikrishnan-5a7169300/" target="_blank">https://www.linkedin.com/in/thanusha-arikrishnan-5a7169300/</a></p>
-            <p>GitHub: <a href="https://github.com/thanusha-stack" target="_blank">https://github.com/thanusha-stack</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/thanusha-arikrishnan-5a7169300/"
+                    target="_blank">https://www.linkedin.com/in/thanusha-arikrishnan-5a7169300/</a></p>
+            <p>GitHub: <a href="https://github.com/thanusha-stack" target="_blank">https://github.com/thanusha-stack</a>
+            </p>
         </div>
     </div>
 
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        (function() {
+        (function () {
             emailjs.init("OVN4ePYf4s46aWsfn");
         })();
 
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
 
             emailjs.sendForm('service_t26vl48', 'template_b2sxtqj', this)
@@ -884,14 +954,14 @@
 
         function showProjectImage(mainImageId, thumbnail) {
             const thumbnails = thumbnail.parentElement.querySelectorAll('.project-thumbnail');
-            
+
             thumbnails.forEach(t => t.classList.remove('active'));
-            
+
             thumbnail.classList.add('active');
-            
+
             const mainImage = document.getElementById(mainImageId);
             mainImage.src = thumbnail.src;
-       
+
             mainImage.style.transform = 'scale(1.03)';
             setTimeout(() => {
                 mainImage.style.transform = 'scale(1)';
@@ -912,7 +982,7 @@
         projectScroll.dispatchEvent(new Event('scroll'));
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
@@ -921,4 +991,5 @@
         });
     </script>
 </body>
+
 </html>
